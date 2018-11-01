@@ -27,12 +27,14 @@ public class GradeChecker {
     
     
     public static boolean isValid(int grade) {
-        boolean valid = 0 <= grade && grade <= 100;
+        final int maxGrade = 100;
+        boolean valid = 0 <= grade && grade <= maxGrade;
         return valid;
     }
     
     public static boolean isPass(int grade) {
-        boolean pass = grade >= 40;
+        final int passGrade = 40;
+        boolean pass = grade >= passGrade;
         return pass;
         
     }

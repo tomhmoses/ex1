@@ -6,9 +6,10 @@ import java.util.Scanner;
 public class MeanGrade {
 
     public static void main(String[] args) {
-        int[] grades = new int[4];
+        final int numberOfGrades = 4;
+        int[] grades = new int[numberOfGrades];
         
-        for (int count = 0; count <= 3; count++) {
+        for (int count = 0; count <= numberOfGrades - 1; count++) {
             grades[count] = MeanGrade.getGrade();
         }
         double avg = MeanGrade.computeMean(grades);
@@ -25,16 +26,16 @@ public class MeanGrade {
     }
     
     public static boolean isValid(int grade) {
-        boolean valid = 0 <= grade && grade <= 100;
+        final int maxGrade = 100;
+        boolean valid = 0 <= grade && grade <= maxGrade;
         return valid;
     }
     
     public static double computeMean(int[] grades) {
         double gradesTotal = 0.0;
         int numOfValidGrades = 0;
-        for (int count=0; count<grades.length; count++)
-        {
-          if(MeanGrade.isValid(grades[count])) {
+        for (int count=0; count<grades.length; count++) {
+          if (MeanGrade.isValid(grades[count])) {
               gradesTotal += grades[count];
               numOfValidGrades += 1;
           }

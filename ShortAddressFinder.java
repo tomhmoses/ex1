@@ -14,24 +14,24 @@ public class ShortAddressFinder {
     }
     
     public static String findShortAddress(String input) {
-        if(input == null || input == "") {
+        if (input == null || input == "") {
             return null;
         }
         
         String[] parts = input.split(",\\s+");
         
-        if(parts.length < 2) {
+        if (parts.length < 2) {
             return null;
         }
         
         String postCode = parts[parts.length - 1];
         
         //checks if post code format is right
-        if(postCode.length() != 6) {
+        if (postCode.length() != 6) {
             return null;
         }
         char[] chars = postCode.toCharArray();
-        if(!(Character.isLetter(chars[0]) && Character.isDigit(chars[1])
+        if (!(Character.isLetter(chars[0]) && Character.isDigit(chars[1])
             && Character.isDigit(chars[2]) && Character.isDigit(chars[3])
             && Character.isLetter(chars[4]) && Character.isLetter(chars[5]) )) {
             return null;

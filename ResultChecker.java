@@ -18,15 +18,13 @@ public class ResultChecker {
     
     public static String getResult(int[] grades) {
         //checks for error
-        for (int count=0; count<grades.length; count++)
-        {
+        for (int count = 0; count < grades.length; count++) {
           if(ResultChecker.isValid(grades[count]) == false) {
               return "ERROR";
           }
         }
         //checks if any are less than 40
-        for (int count=0; count<grades.length; count++)
-        {
+        for (int count = 0; count < grades.length; count++) {
           if(ResultChecker.isPass(grades[count]) == false) {
               return "FAIL";
           }
@@ -51,10 +49,8 @@ public class ResultChecker {
     public static double computeModuleMean(int[] grades) {
         double gradesTotal = 0.0;
         //item 0 is the project grade so we ignore it
-        for (int count=1; count<grades.length; count++)
-        {
+        for (int count = 1; count < grades.length; count++) {
           gradesTotal += grades[count];
-          
         }
         double avg = gradesTotal / 8;
         return avg;

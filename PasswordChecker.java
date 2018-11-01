@@ -10,16 +10,15 @@ public class PasswordChecker {
         System.out.println("Please enter your new password:");
         String password = in.nextLine();
         System.out.println(PasswordChecker.checkPassword(password));
-
     }
     
     public static String checkPassword(String input) {
         String errors = "";
-        if(input.length() < 8) {
+        if (input.length() < 8) {
             errors += "TOO SHORT, ";
         }
         
-        if(input.length() > 12) {
+        if (input.length() > 12) {
             errors += "TOO LONG, ";
         }
         
@@ -30,21 +29,21 @@ public class PasswordChecker {
                 passedCharTest = false;
             }
         }
-        if(!passedCharTest) {
+        if (!passedCharTest) {
             errors += "FAILED CHAR TEST, ";
         }
-        if(input.length() > 0) {
+        if (input.length() > 0) {
             if(Character.isDigit(input.charAt(0))) {
                 errors += "STARTS WITH DIGIT, ";
             }
         }
         
-        if(input.toUpperCase() == input || input.toLowerCase() == input) {
+        if (input.toUpperCase() == input || input.toLowerCase() == input) {
             errors += "NO MIX OF CASE, ";
         }
         
         
-        if(errors == "") {
+        if (errors == "") {
             return "OK";
         }
         else {

@@ -34,7 +34,7 @@ public class IDCreator {
 		}
 		
 		
-		return ID.toUpperCase();
+		return ID.toLowerCase();
 	}
 
 }
